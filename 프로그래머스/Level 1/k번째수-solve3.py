@@ -1,0 +1,12 @@
+"""
+배열array i번째 숫자부터 j번재 숫자까지 자르고 정렬했을 때 k번째 수 구하기 
+commands를 하나씩 탐색하면서 array를 슬라이싱하며 k번째 수를 찾아 정답 리스트에 append해서 결과 반환하기
+"""
+
+def solution(array, commands):
+    answer = []
+    # commands를 하나씩 탐색 - command
+    for command in commands:
+        answer.append(sorted(array[command[0] - 1: command[1]])[command[2] - 1])
+    
+    return answer
